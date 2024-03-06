@@ -32,3 +32,20 @@ export const getTrendingMovies = async (baseUrl) => {
     return data;
 
 };
+
+/**getTrendingTv
+ * 
+ * @param baseUrl
+ * 
+ * @returns tv di tendenza 
+ */
+
+export const getTrendingTv = async (baseUrl) => {
+
+    const response = await fetch(baseUrl + "tv/day?language=en-US", opts);
+
+    const data = await response.json();
+
+    return data;
+
+};
