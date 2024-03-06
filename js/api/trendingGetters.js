@@ -1,14 +1,8 @@
-const opts = {
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5OGRkMDQ0MGFkOGVkZmY2ZjUwNjhiMzI0YjNjMzdjNyIsInN1YiI6IjY1ZTg2YzlmYTZjMTA0MDE4N2U5ZjA2ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3JONL7uIeyugpFh4DRlK2dohwPH7kMz-H16gz-fp85s",
-    },
-};
+import { opts } from "./config.js";
 
 export const getTrending = async (baseUrl) => {
 
-    const response = await fetch(baseUrl + "all/day?language=en-US", opts);
+    const response = await fetch(baseUrl + "trending/all/day?language=en-US", opts);
 
     const data = await response.json();
 
@@ -25,7 +19,7 @@ export const getTrending = async (baseUrl) => {
 
 export const getTrendingMovies = async (baseUrl) => {
 
-    const response = await fetch(baseUrl + "movie/day?language=en-US", opts);
+    const response = await fetch(baseUrl + "trending/movie/day?language=en-US", opts);
 
     const data = await response.json();
 
@@ -42,7 +36,7 @@ export const getTrendingMovies = async (baseUrl) => {
 
 export const getTrendingTv = async (baseUrl) => {
 
-    const response = await fetch(baseUrl + "tv/day?language=en-US", opts);
+    const response = await fetch(baseUrl + "trending/tv/day?language=en-US", opts);
 
     const data = await response.json();
 
