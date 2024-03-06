@@ -2,5 +2,7 @@ import { getTrending, getTrendingMovies, getTrendingTv } from "./api/trendingGet
 import { baseUrl } from "./api/config.js";
 
 getTrending (baseUrl);
+
 getTrendingMovies (baseUrl);
+
 getTrendingTv (baseUrl);
