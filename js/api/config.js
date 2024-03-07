@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 //carica le variabili d'ambiente del file .env
 dotenv.config();
 
+export let person_name = "Clooney";
+
 export const BASE_URL = "https://api.themoviedb.org/3/" 
 
 export const OPTIONS = {
