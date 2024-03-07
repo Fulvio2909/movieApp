@@ -1,11 +1,11 @@
 import { getTrending, getTrendingMovies, getTrendingTv } from "./api/trendingGetters.js";
-import { baseUrl } from "./api/config.js";
+import { BASE_URL } from "./api/config.js";
 import { getSearchPerson } from "./api/searchGetters.js";
 
-getTrending (baseUrl);
+getTrending (BASE_URL);
 
-getTrendingMovies (baseUrl);
+getTrendingMovies (BASE_URL);
 
-getTrendingTv (baseUrl);
+getTrendingTv (BASE_URL);
 
-getSearchPerson(baseUrl, "clooney");
+getSearchPerson(BASE_URL, "clooney");

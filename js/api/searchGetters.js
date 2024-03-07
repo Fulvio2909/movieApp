@@ -1,15 +1,15 @@
-import { opts } from "./config.js";
+import { OPTIONS, BASE_URL } from "./config.js";
 
 /**getSearchPerson
  * 
- * @param baseUrl
+ * @param BASE_URL
  * 
  * @returns tv di tendenza 
  */
 
-export const getSearchPerson = async (baseUrl, nome) => { 
+export const getSearchPerson = async ( nome ) => { 
     
-    const response = await fetch(baseUrl + "search/person" + `?query=${nome}`, opts);
+    const response = await fetch(BASE_URL + "search/person" + `?query=${ nome }`, OPTIONS);
     
     const data = await response.json();
    

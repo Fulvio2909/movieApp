@@ -1,8 +1,15 @@
-import { opts } from "./config.js";
+import { BASE_URL, OPTIONS } from "./config.js";
 
-export const getTrending = async (baseUrl) => {
+/**getTrending
+ * 
+ * @param BASE_URL
+ * 
+ * @returns all
+ */
 
-    const response = await fetch(baseUrl + "trending/all/day?language=en-US", opts);
+export const getTrending = async () => {
+
+    const response = await fetch(BASE_URL + "trending/all/day?language=en-US", OPTIONS);
 
     const data = await response.json();
 
@@ -12,14 +19,14 @@ export const getTrending = async (baseUrl) => {
 
 /**getTrendingMovies
  * 
- * @param baseUrl
+ * @param BASE_URL
  * 
  * @returns film di tendenza 
  */
 
-export const getTrendingMovies = async (baseUrl) => {
+export const getTrendingMovies = async () => {
 
-    const response = await fetch(baseUrl + "trending/movie/day?language=en-US", opts);
+    const response = await fetch(BASE_URL + "trending/movie/day?language=en-US", OPTIONS);
 
     const data = await response.json();
 
@@ -29,14 +36,14 @@ export const getTrendingMovies = async (baseUrl) => {
 
 /**getTrendingTv
  * 
- * @param baseUrl
+ * @param BASE_URL
  * 
  * @returns tv di tendenza 
  */
 
-export const getTrendingTv = async (baseUrl) => {
+export const getTrendingTv = async () => {
 
-    const response = await fetch(baseUrl + "trending/tv/day?language=en-US", opts);
+    const response = await fetch(BASE_URL + "trending/tv/day?language=en-US", OPTIONS);
 
     const data = await response.json();
 
