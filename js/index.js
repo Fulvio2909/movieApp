@@ -13,19 +13,24 @@ import { person_name } from "./api/config.js";
  */
 
 const trendingAll = getTrending () .then ((data) => {
+
     data.results.forEach(movie => {
-        console.log(movie.id)
-        console.log(movie.poster_path)
+        console.log(movie.id);
+        console.log(movie.poster_path);
 if (movie.media_type == "movie" ) {
-        console.log(movie.title)
+        console.log(movie.title);
     }
     else if (movie.media_type == "tv") {
-        console.log(movie.name)
+        console.log(movie.name);
     }
-        console.log(movie.vote_average)
-        console.log(movie.media_type)
-        console.log(movie.release_date)
-    });
+        console.log(movie.vote_average);
+        console.log(movie.media_type);
+        if (movie.release_date != null){
+            console.log(movie.release_date);
+        } else {
+            console.log(movie.first_air_date);
+        }
+    }); 
 });
 const TrendingMovies = getTrendingMovies () .then ((data) => {
     //console.log(data)
