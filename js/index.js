@@ -1,11 +1,27 @@
 import { getTrending, getTrendingMovies, getTrendingTv } from "./api/trendingGetters.js";
-import { BASE_URL } from "./api/config.js";
 import { getSearchPerson } from "./api/searchGetters.js";
 
-getTrending (BASE_URL);
+let person_name = "Clooney";
 
-getTrendingMovies (BASE_URL);
+/**
+ * Da aggiungere:
+ * id
+ * poster_path
+ * titòe
+ * vote_average
+ * media_type
+ * release_date
+ */
 
-getTrendingTv (BASE_URL);
-
-getSearchPerson(BASE_URL, "clooney");
+const trending = getTrending () .then ((data) => {
+    console.log(data)
+});
+const TrendingMovies = getTrendingMovies () .then ((data) => {
+    console.log(data)
+});
+const trendingTv = getTrendingTv () .then ((data) => {
+    console.log(data)
+});
+const searchPersond = getSearchPerson( person_name ) .then ((data) => {
+    console.log(data)
+});
