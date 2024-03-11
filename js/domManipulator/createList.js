@@ -24,3 +24,22 @@ export const createTrendingMoviesList = (movieData) => {
         list.appendChild(listItem);
     });
 };
+
+export const createCard = (data, cardID) => {
+    const card = document.getElementById(cardID);
+    data.forEach(element => {
+
+          const cardTitle = document.createElement("h5"); 
+          cardTitle.textContent = element.title;
+          card.appendChild(cardTitle);
+          
+          const cardDescription = document.createElement("p");
+
+          cardDescription.textContent = element.overview;
+          card.appendChild(cardDescription);
+          const cardButton = document.createElement("button"); 
+
+          cardButton.textContent = "Scopri di più";
+          card.appendChild(cardButton);
+    });
+}
