@@ -11,7 +11,6 @@ import { person_name } from "./api/config.js";
  * media_type
  * release_date
  */
-
 const trendingAll = getTrending () .then ((data) => {
 
     data.results.forEach(movie => {
