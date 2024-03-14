@@ -26,20 +26,52 @@ export const createTrendingMoviesList = (movieData) => {
 };
 
 export const createCard = (data, cardID) => {
-    const card = document.getElementById(cardID);
-    data.forEach(element => {
+    const cardContainer = document.getElementById(cardID);
+    
+    // Creiamo un nuovo elemento div con la classe "row" per iniziare una nuova riga della griglia
+    const row = document.createElement("div");
+    row.className = "row";
 
-          const cardTitle = document.createElement("h5"); 
-          cardTitle.textContent = element.title;
-          card.appendChild(cardTitle);
-          
-          const cardDescription = document.createElement("p");
+    data.forEach(film => {
+        // Creiamo il contenitore per ogni card all'interno della griglia
+        const col = document.createElement("div");
+        col.className = "col-12 col-md-6 col-lg-4"; // Utilizziamo le classi di Bootstrap per definire le dimensioni delle colonne
 
-          cardDescription.textContent = element.overview;
-          card.appendChild(cardDescription);
-          const cardButton = document.createElement("button"); 
+        // Creiamo la card
+        const card = document.createElement("div");
+        const cardImage = document.createElement("img");
+        const textContainer = document.createElement("div");
+        const cardTitle = document.createElement("h5"); 
+        const cardDescription = document.createElement("p"); 
+        const cardButton = document.createElement("a"); 
 
-          cardButton.textContent = "Scopri di più";
-          card.appendChild(cardButton);
+        card.className = "card";
+        textContainer.className = "card-body";
+        cardImage.className = "card-img-top";   
+        cardTitle.className = "card-title";
+        cardDescription.className = "card-text";
+        cardButton.className = "btn btn-primary";
+
+        cardImage.alt = film.title;
+        cardImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
+        cardButton.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
+
+        cardTitle.textContent = film.title;
+        cardDescription.textContent = film.overview;
+        cardButton.textContent = "Scopri di più";
+
+        textContainer.appendChild(cardTitle);
+        textContainer.appendChild(cardDescription);
+        textContainer.appendChild(cardButton);
+        card.appendChild(cardImage);
+        card.appendChild(textContainer);
+        col.appendChild(card);
+
+        // Aggiungiamo la colonna alla riga
+        row.appendChild(col);
     });
+
+    // Aggiungiamo la riga con tutte le colonne al container delle card
+    cardContainer.appendChild(row);
+
 }
