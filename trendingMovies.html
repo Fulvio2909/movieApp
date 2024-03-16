@@ -20,7 +20,7 @@
             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="trendingMovies.html">Trending Movies</a>
+            <a class="nav-link" href="index.html">Trending Movies</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="trendingTv.html">Trending Tv</a>
@@ -28,15 +28,23 @@
         </ul>
       </div>
     </div>
-  </nav>  
+  </nav>
+    
+      <h2 id="h2TrendingMovies">Trending Movies</h2>
 
-  <h1 id="Title">MovieApp</h1>  
-  <p id="Paragraph">Benvenuto su Movie App, il tuo compagno definitivo per esplorare il vasto universo del cinema e delle serie TV. Con una vasta gamma di titoli, dai blockbuster di Hollywood agli indie di successo, Movie App ti offre un'esperienza di intrattenimento senza pari. Scopri nuovi film e serie TV, esplora i tuoi generi preferiti e goditi contenuti personalizzati per soddisfare i tuoi gusti unici. Con funzionalità avanzate di ricerca e di raccomandazione, Movie App ti guida nella tua ricerca dell'intrattenimento perfetto. Entra nel mondo di Movie App e lasciati trasportare dalle emozionanti storie che ti attendono.</p>
-  
+    <div id="cardID" class="container"></div>
 
-  </body>
+</body>
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script type="module">
+    import { getTrendingMovies } from "./js/api/trendingGetters.js";
+    import { createCard } from "./js/domManipulator/createList.js";
+
+    const movieData = await getTrendingMovies();
+    createCard(movieData.results, "cardID");
+
 
 </script>
 
