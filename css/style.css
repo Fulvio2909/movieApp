@@ -1,39 +1,43 @@
-.space-mono-regular {
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .space-mono-bold {
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .space-mono-regular-italic {
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .space-mono-bold-italic {
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: italic;
-  }  
+:root { 
+  --bs-primar: #FE5D26!important; /* Cambia il colore primario */
+  --bs-secondary: #6c757d; /* Cambia il colore secondario */
+  --bs-success: #28a745; /* Cambia il colore di successo */
+  --bs-info: #17a2b8; /* Cambia il colore delle informazioni */
+  --bs-warning: #ffc107; /* Cambia il colore di avviso */
+  --bs-danger: #dc3545; /* Cambia il colore di pericolo */
+  --bs-light: #f8f9fa; /* Cambia il colore chiaro */
+  --bs-dark: #343a40; /* Cambia il colore scuro */
+  --bs-white: #ffffff; /* Cambia il colore bianco */
+  --bs-black: #000000; /* Cambia il colore nero */
+  --bs-body-bg: #CFDBD5!important;
+}
 
 .html.body {
     width: 100%;
 }
 
+.body{
+  back
+}
+
 .card {
-    margin-top: 10px;
-    margin-bottom: 10px;    
-    height: 100%; 
-    display: flex; 
-    flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;    
+  height: 100%; 
+  display: flex; 
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 } 
+
+.btn-primary {
+  background-color: #274690!important; /* Cambia il colore di sfondo */
+  border-color: #274690; /* Cambia il colore del bordo */
+}
+
+.btn-primary:hover {
+  background-color: #274690; /* Cambia il colore di sfondo al passaggio del mouse */
+  border-color: #274690; /* Cambia il colore del bordo al passaggio del mouse */
+}
 
 .containerNavbar{
 width: 100%;
@@ -42,18 +46,40 @@ justify-content: center;
 }
 
 .navbar {
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-width: 303px;
-    width: fit-content;
-    margin-top: 20px;
-    border-radius: 2rem;
+  min-width: 303px;
+  width: fit-content;
+  margin-top: 20px;
+  border-radius: 2rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
 .Title {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
+
+.containerLanding{
+  width: 40%;
+  min-width: 250px;
+  margin-top: 2rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: fit-content;
+  border-radius: 2rem;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#titleLanding{
+  text-align: center;
+  padding: 10px;
+}
+
 #Paragraph{
-    text-align: center  ;
+  text-align: center;
+  padding: 10px;
 }
+
+

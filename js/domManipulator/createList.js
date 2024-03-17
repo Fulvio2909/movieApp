@@ -45,7 +45,7 @@ export const createCard = (data, cardID) => {
         const cardDescription = document.createElement("p"); 
         const cardButton = document.createElement("a"); 
 
-        card.className = "card";
+        card.className = "card bg-white";
         textContainer.className = "card-body";
         cardImage.className = "card-img-top";   
         cardTitle.className = "card-title";
