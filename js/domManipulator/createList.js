@@ -75,3 +75,29 @@ export const createCard = (data, cardID) => {
     cardContainer.appendChild(row);
 
 }
+
+export const carouselImages = (data, imageID) => {
+    const imageContainer = document.getElementById(imageID);
+
+    const divFirstImage = document.createElement("div");
+    const imgFirstImage = document.createElement("img");
+    divFirstImage.className = "carousel-item active";
+    imgFirstImage.className = "d-block w-100";
+    imgFirstImage.src = `https:image.tmdb.org/t/p/w500${data[0].backdrop_path}`;
+    imgFirstImage.href = `https:image.tmdb.org/t/p/w500${data[0].poster_path}`;
+    divFirstImage.appendChild(imgFirstImage);
+    imageContainer.appendChild(divFirstImage);
+
+    data.slice(1).forEach(film => {
+        const divImage = document.createElement("div");
+        const imgImage = document.createElement("img");
+        const buttonImage = document.createElement("a");
+        divImage.className = "carousel-item";
+        imgImage.className = "d-block w-100";
+        imgImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
+        buttonImage.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
+        imgImage.appendChild(buttonImage);
+        divImage.appendChild(imgImage);
+        imageContainer.appendChild(divImage);
+    });
+}
