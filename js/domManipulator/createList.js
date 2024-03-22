@@ -30,12 +30,12 @@ export const createCard = (data, cardID) => {
     
     // Creiamo un nuovo elemento div con la classe "row" per iniziare una nuova riga della griglia
     const row = document.createElement("div");
-    row.className = "row";
+    row.className = "row row-cols-1 row-cols-md-2 row-cols-lg-3"; // Utilizziamo le classi di Bootstrap per definire le dimensioni delle colonne
 
     data.forEach(film => {
         // Creiamo il contenitore per ogni card all'interno della griglia
         const col = document.createElement("div");
-        col.className = "col-12 col-md-6 col-lg-4"; // Utilizziamo le classi di Bootstrap per definire le dimensioni delle colonne
+        col.className = "col";
 
         // Creiamo la card
         const card = document.createElement("div");
@@ -45,12 +45,12 @@ export const createCard = (data, cardID) => {
         const cardDescription = document.createElement("p"); 
         const cardButton = document.createElement("a"); 
 
-        card.className = "card bg-white";
-        textContainer.className = "card-body";
+        card.className = "card bg-white h-100"; // Aggiungiamo "h-100" per garantire che tutte le card nella stessa riga abbiano la stessa altezza
+        textContainer.className = "card-body d-flex flex-column justify-content-between"; // Aggiungiamo "d-flex flex-column justify-content-between" per allineare il testo in basso
         cardImage.className = "card-img-top";   
         cardTitle.className = "card-title";
         cardDescription.className = "card-text";
-        cardButton.className = "btn btn-primary";
+        cardButton.className = "btn btn-primary mt-auto"; // Aggiungiamo "mt-auto" per spostare il pulsante in basso
 
         cardImage.alt = film.title;
         cardImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
@@ -73,8 +73,9 @@ export const createCard = (data, cardID) => {
 
     // Aggiungiamo la riga con tutte le colonne al container delle card
     cardContainer.appendChild(row);
-
 }
+
+
 
 export const carouselImages = (data, imageID) => {
     const imageContainer = document.getElementById(imageID);

@@ -1,5 +1,5 @@
 :root { 
-  --bs-primar: #FE5D26!important; /* Cambia il colore primario */
+  --bs-primary: #FE5D26!important; /* Cambia il colore primario */
   --bs-secondary: #6c757d; /* Cambia il colore secondario */
   --bs-success: #28a745; /* Cambia il colore di successo */
   --bs-info: #17a2b8; /* Cambia il colore delle informazioni */
@@ -12,96 +12,102 @@
   --bs-body-bg: #CFDBD5!important;
 }
 
-.html.body {
+html,
+
+body {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bs-body-bg);
 }
 
-.body{
-  back
+.card-text{
+  max-height: 100px;
+  overflow-y:auto;
 }
 
 .card {
-  margin-top: 10px;
-  margin-bottom: 10px;    
   height: 100%; 
   display: flex; 
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 } 
 
+#cardID{
+  margin-bottom: 20px
+}
+
+.col{
+  margin-bottom: 20px
+}
+
+
 .btn-primary {
-  background-color: #274690!important; /* Cambia il colore di sfondo */
-  border-color: #274690; /* Cambia il colore del bordo */
+    background-color: #274690!important; /* Cambia il colore di sfondo */
+    border-color: #274690; /* Cambia il colore del bordo */
 }
 
 .btn-primary:hover {
-  background-color: #274690; /* Cambia il colore di sfondo al passaggio del mouse */
-  border-color: #274690; /* Cambia il colore del bordo al passaggio del mouse */
+    background-color: #274690; /* Cambia il colore di sfondo al passaggio del mouse */
+    border-color: #274690; /* Cambia il colore del bordo al passaggio del mouse */
 }
 
 .containerNavbar{
-width: 100%;
-display: flex;
-justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar {
-  min-width: 303px;
-  width: fit-content;
-  margin-top: 20px;
-  margin-bottom: 2rem;
-  border-radius: 2rem;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+    min-width: 303px;
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
 .Title {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .containerLanding{
-  margin: 2rem;
-  height: fit-content;
-  border-radius: 2rem;
-  padding: 12px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    margin: 2rem;
+    border-radius: 2rem;
+    padding: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    justify-items: end;
 }
 
 #titleLanding{
-  text-align: center;
-  padding: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 #Paragraph{
-  text-align: center;
-  padding: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 .carousel-item{
-  border-radius: 2rem;
+    border-radius: 2rem;
 }
 
 #imageID{
-  border-radius: 1.375rem;
+    border-radius: 1.375rem;
 }
 
-.form-control{
+.form-control {
   border-top-left-radius: 1.375rem!important;
   border-bottom-left-radius: 1.375rem!important;
-  border-top-right-radius: 0!important;
-  border-bottom-right-radius: 0!important;
+  
 }
 
-.btn{
- border-top-right-radius: 1.375rem!important;
- border-bottom-right-radius: 1.375rem!important;
- border-top-left-radius: 0!important;
- border-bottom-left-radius: 0!important;
+.btn-secondary {
+  border-top-right-radius: 1.375rem!important;
+  border-bottom-right-radius: 1.375rem!important;
 }
-
-.containerSearchBar{
-  justify-content: center;
-}
-
