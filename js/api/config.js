@@ -7,6 +7,8 @@ export let person_name = "Clooney";
 
 export const BASE_URL = "https://api.themoviedb.org/3/" 
 
+export const BASE_SEARCH_URL = "https://api.themoviedb.org/3/search/movie?query="
+
 export const OPTIONS = {
     headers: {
         "Content-Type": "application/json",

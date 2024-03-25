@@ -44,10 +44,10 @@
     </div>
     <div class="containerLanding bg-white col-10 col-md-6 col-lg-4">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..."
+        <input id="queryInput" type="text" class="form-control" placeholder="Search..." aria-label="Search..."
           aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-secondary" type="button">Search</button>
+          <button id="btnSearch" onclick="printClick()" class="btn btn-secondary" type="button">Search</button>
         </div>
       </div>
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -75,9 +75,15 @@
 <script type="module">
   import { getTrendingMovies } from "./js/api/trendingGetters.js";
   import { carouselImages } from "./js/domManipulator/createList.js";
-
+  import { getSearchMovies } from "./js/api/searchGetters.js";
   const movieData = await getTrendingMovies();
   carouselImages(movieData.results, "imageID");
+
+  const printClick = () =>{
+    const button = document.getElementById("btnSearch");
+    button.addEventListener("click", console.log("click"));
+  };
+
 </script>
 
 </html>
