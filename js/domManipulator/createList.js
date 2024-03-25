@@ -50,8 +50,8 @@ export const createCard = (data, cardID) => {
         cardButton.className = "btn btn-primary mt-auto";
 
         cardImage.alt = film.title;
-        cardImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
-        cardButton.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
+        cardImage.src = `https://image.tmdb.org/t/p/w500${film.backdrop_path}`;
+        cardButton.href = `https://image.tmdb.org/t/p/w500${film.poster_path}`;
 
         cardTitle.textContent = film.title;
         cardDescription.textContent = truncateText(film.overview, 100); // Limita la descrizione a 100 caratteri
