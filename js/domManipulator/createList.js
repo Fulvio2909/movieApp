@@ -28,16 +28,13 @@ export const createTrendingMoviesList = (movieData) => {
 export const createCard = (data, cardID) => {
     const cardContainer = document.getElementById(cardID);
     
-    // Creiamo un nuovo elemento div con la classe "row" per iniziare una nuova riga della griglia
     const row = document.createElement("div");
-    row.className = "row row-cols-1 row-cols-md-2 row-cols-lg-3"; // Utilizziamo le classi di Bootstrap per definire le dimensioni delle colonne
+    row.className = "row row-cols-1 row-cols-md-2 row-cols-lg-3";
 
     data.forEach(film => {
-        // Creiamo il contenitore per ogni card all'interno della griglia
         const col = document.createElement("div");
         col.className = "col";
 
-        // Creiamo la card
         const card = document.createElement("div");
         const cardImage = document.createElement("img");
         const textContainer = document.createElement("div");
@@ -45,19 +42,19 @@ export const createCard = (data, cardID) => {
         const cardDescription = document.createElement("p"); 
         const cardButton = document.createElement("a"); 
 
-        card.className = "card bg-white h-100"; // Aggiungiamo "h-100" per garantire che tutte le card nella stessa riga abbiano la stessa altezza
-        textContainer.className = "card-body d-flex flex-column justify-content-between"; // Aggiungiamo "d-flex flex-column justify-content-between" per allineare il testo in basso
+        card.className = "card bg-white h-100";
+        textContainer.className = "card-body d-flex flex-column justify-content-between";
         cardImage.className = "card-img-top";   
         cardTitle.className = "card-title";
         cardDescription.className = "card-text";
-        cardButton.className = "btn btn-primary mt-auto"; // Aggiungiamo "mt-auto" per spostare il pulsante in basso
+        cardButton.className = "btn btn-primary mt-auto";
 
         cardImage.alt = film.title;
         cardImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
         cardButton.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
 
         cardTitle.textContent = film.title;
-        cardDescription.textContent = film.overview;
+        cardDescription.textContent = truncateText(film.overview, 100); // Limita la descrizione a 100 caratteri
         cardButton.textContent = "Scopri di più";
 
         textContainer.appendChild(cardTitle);
@@ -67,13 +64,21 @@ export const createCard = (data, cardID) => {
         card.appendChild(textContainer);
         col.appendChild(card);
 
-        // Aggiungiamo la colonna alla riga
         row.appendChild(col);
     });
 
-    // Aggiungiamo la riga con tutte le colonne al container delle card
     cardContainer.appendChild(row);
 }
+
+// Funzione per abbreviare il testo oltre una certa lunghezza
+function truncateText(text, maxLength) {
+    if (text.length > maxLength) {
+        return text.substring(0, maxLength) + '...';
+    } else {
+        return text;
+    }
+}
+
 
 
 
@@ -90,15 +95,36 @@ export const carouselImages = (data, imageID) => {
     imageContainer.appendChild(divFirstImage);
 
     data.slice(1).forEach(film => {
+        // Condiziona tutto questo codice in base al fatto che sia definito backdrop_path e poster_path
         const divImage = document.createElement("div");
         const imgImage = document.createElement("img");
         const buttonImage = document.createElement("a");
         divImage.className = "carousel-item";
         imgImage.className = "d-block w-100";
-        imgImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
-        buttonImage.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
-        imgImage.appendChild(buttonImage);
-        divImage.appendChild(imgImage);
-        imageContainer.appendChild(divImage);
+        if (film.backdrop_path!==null) {
+            imgImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
+            buttonImage.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
+        
+            imgImage.appendChild(buttonImage);
+            divImage.appendChild(imgImage);
+            imageContainer.appendChild(divImage);
+        }
+        else {}
+        
+        // Fine if
     });
 }
+
+function limitaDescrizione() {
+    var descrizione = document.getElementById("descrizione");
+    var testoCompleto = descrizione.innerHTML;
+    var lunghezzaMassima = 100; // Cambia questo valore al numero di caratteri desiderato
+    
+    if (testoCompleto.length > lunghezzaMassima) {
+      var testoAbbreviato = testoCompleto.substring(0, lunghezzaMassima);
+      descrizione.innerHTML = testoAbbreviato + '...';
+    } else {
+      // Se il testo è già abbreviato, ripristina il testo completo
+      descrizione.innerHTML = testoCompleto;
+    }
+  }

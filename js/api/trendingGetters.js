@@ -8,13 +8,15 @@ import { BASE_URL, OPTIONS } from "./config.js";
  */
 
 export const getTrending = async () => {
+    try {
+        const response = await fetch(BASE_URL + "trending/all/day?language=en-US", OPTIONS);
 
-    const response = await fetch(BASE_URL + "trending/all/day?language=en-US", OPTIONS);
+        const data = await response.json();
 
-    const data = await response.json();
-
-    return data;
-
+        return data;
+    } catch (error) {
+        document.write("Error 404")
+    }
 };
 
 /**getTrendingMovies
@@ -25,12 +27,16 @@ export const getTrending = async () => {
  */
 
 export const getTrendingMovies = async () => {
+    try {
+        const response = await fetch(BASE_URL + "trending/movie/day?language=en-US", OPTIONS);
 
-    const response = await fetch(BASE_URL + "trending/movie/day?language=en-US", OPTIONS);
+        const data = await response.json();
 
-    const data = await response.json();
+        return data;
+    } catch (error) {
+        document.write("Error 404")
+    }
 
-    return data;
 
 };
 
@@ -42,11 +48,13 @@ export const getTrendingMovies = async () => {
  */
 
 export const getTrendingTv = async () => {
+    try {
+        const response = await fetch(BASE_URL + "trending/tv/day?language=en-US", OPTIONS);
 
-    const response = await fetch(BASE_URL + "trending/tv/day?language=en-US", OPTIONS);
+        const data = await response.json();
 
-    const data = await response.json();
-
-    return data;
-
+        return data;
+    } catch (error) {
+        document.write("Error 404")
+    }
 };
