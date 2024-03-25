@@ -89,8 +89,8 @@ export const carouselImages = (data, imageID) => {
     const imgFirstImage = document.createElement("img");
     divFirstImage.className = "carousel-item active";
     imgFirstImage.className = "d-block w-100";
-    imgFirstImage.src = `https:image.tmdb.org/t/p/w500${data[0].backdrop_path}`;
-    imgFirstImage.href = `https:image.tmdb.org/t/p/w500${data[0].poster_path}`;
+    imgFirstImage.src = `https://image.tmdb.org/t/p/w500${data[0].backdrop_path}`;
+    imgFirstImage.href = `https://image.tmdb.org/t/p/w500${data[0].poster_path}`;
     divFirstImage.appendChild(imgFirstImage);
     imageContainer.appendChild(divFirstImage);
 
@@ -102,8 +102,8 @@ export const carouselImages = (data, imageID) => {
         divImage.className = "carousel-item";
         imgImage.className = "d-block w-100";
         if (film.backdrop_path!==null) {
-            imgImage.src = `https:image.tmdb.org/t/p/w500${film.backdrop_path}`;
-            buttonImage.href = `https:image.tmdb.org/t/p/w500${film.poster_path}`;
+            imgImage.src = `https://image.tmdb.org/t/p/w500${film.backdrop_path}`;
+            buttonImage.href = `https://image.tmdb.org/t/p/w500${film.poster_path}`;
         
             imgImage.appendChild(buttonImage);
             divImage.appendChild(imgImage);
